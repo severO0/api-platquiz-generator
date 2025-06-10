@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Desenvolvimento de Aplicações Mobile usando Kotlin</title>
+    <style>
+        body {
+            background-color: Azul;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .pergunta {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .pergunta h3 {
+            margin-top: 0;
+            color: #444;
+        }
+        .alternativa {
+            margin: 10px 0;
+            padding: 8px;
+        }
+        .alternativa input {
+            margin-right: 10px;
+        }
+        .alternativa label {
+            cursor: pointer;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .correto { background-color: #d4edda; color: #155724; }
+        .incorreto { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz sobre Desenvolvimento de Aplicações Mobile usando Kotlin</h1>
+        <form id="quizForm">
+<div class='pergunta'><h3>1. Qual é o nome do arquivo de configuração do projeto Android?</h3><div class='alternativa'><input type='radio' name='q1' id='q1_A' value='A'/><label for='q1_A'>A) build.gradle</label></div><div class='alternativa'><input type='radio' name='q1' id='q1_B' value='B'/><label for='q1_B'>B) .gradle</label></div><div class='alternativa'><input type='radio' name='q1' id='q1_C' value='C'/><label for='q1_C'>C) settings.gradle</label></div></div><div class='pergunta'><h3>2. Qual é a linguagem de programação que é utilizada em conjunto com Kotlin?</h3><div class='alternativa'><input type='radio' name='q2' id='q2_A' value='A'/><label for='q2_A'>A) Java</label></div><div class='alternativa'><input type='radio' name='q2' id='q2_B' value='B'/><label for='q2_B'>B) C#</label></div><div class='alternativa'><input type='radio' name='q2' id='q2_C' value='C'/><label for='q2_C'>C) Python</label></div></div><div class='pergunta'><h3>3. O que é o Android Studio?</h3><div class='alternativa'><input type='radio' name='q3' id='q3_A' value='A'/><label for='q3_A'>A) Um framework para desenvolvimento de aplicações mobile</label></div><div class='alternativa'><input type='radio' name='q3' id='q3_B' value='B'/><label for='q3_B'>B) Um IDE para desenvolvimento de aplicações mobile</label></div><div class='alternativa'><input type='radio' name='q3' id='q3_C' value='C'/><label for='q3_C'>C) Um sistema operacional para dispositivos móveis</label></div></div><div class='pergunta'><h3>4. Qual é o nome do método que é chamado quando o usuário interage com um botão?</h3><div class='alternativa'><input type='radio' name='q4' id='q4_A' value='A'/><label for='q4_A'>A) onClick</label></div><div class='alternativa'><input type='radio' name='q4' id='q4_B' value='B'/><label for='q4_B'>B) buttonClick</label></div><div class='alternativa'><input type='radio' name='q4' id='q4_C' value='C'/><label for='q4_C'>C) onButtonClicked</label></div></div><div class='pergunta'><h3>5. O que é o Activity no desenvolvimento de aplicações Android?</h3><div class='alternativa'><input type='radio' name='q5' id='q5_A' value='A'/><label for='q5_A'>A) Uma classe que representa uma tela do aplicativo</label></div><div class='alternativa'><input type='radio' name='q5' id='q5_B' value='B'/><label for='q5_B'>B) Um método que é chamado quando o aplicativo é iniciado</label></div><div class='alternativa'><input type='radio' name='q5' id='q5_C' value='C'/><label for='q5_C'>C) Um objeto que representa um botão na tela</label></div></div><div class='pergunta'><h3>6. Qual é o nome do layout mais comummente usado em aplicativos Android?</h3><div class='alternativa'><input type='radio' name='q6' id='q6_A' value='A'/><label for='q6_A'>A) ConstraintLayout</label></div><div class='alternativa'><input type='radio' name='q6' id='q6_B' value='B'/><label for='q6_B'>B) LinearLayout</label></div><div class='alternativa'><input type='radio' name='q6' id='q6_C' value='C'/><label for='q6_C'>C) GridLayout</label></div></div>            <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+            <div id="resultado" class="resultado"></div>
+        </form>
+
+        <script>
+            function verificarRespostas() {
+                const form = document.getElementById('quizForm');
+                const resultado = document.getElementById('resultado');
+                let respostasCorretas = 0;
+                let totalPerguntas = 6;
+
+                // Aqui você poderia implementar a lógica de verificação
+                // Por enquanto, apenas mostra que o quiz foi submetido
+                resultado.innerHTML = '<p>Quiz submetido com sucesso! Obrigado por participar.</p>';
+                resultado.className = 'resultado correto';
+                resultado.style.display = 'block';
+            }
+        </script>
+    </div>
+</body>
+</html>
